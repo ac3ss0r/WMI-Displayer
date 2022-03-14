@@ -24,13 +24,11 @@ namespace WMI_Displayer
 		}
 
         private void button1_Click(object sender, EventArgs e) {
-            richTextBox1.Text = getWmiData(comboBox1.Text);
+            classValuesField.Text = getWmiData(classesListBox.Text);
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-            foreach (string name in GetWmiNamespaces("root")) {
-                comboBox1.Items.Add(name);
-            }
+            classesListBox.DataSource = getWmiNamespaces();
         }
         
         
@@ -52,20 +50,19 @@ namespace WMI_Displayer
             
         }
 
-        private static string[] GetWmiNamespaces(string root) {
-            List<String> namespaces = new List<string>();
-            ManagementObjectSearcher mgmtObjSearcher = new ManagementObjectSearcher("SELECT * FROM meta_class");
-            ManagementObjectCollection colDisks = mgmtObjSearcher.Get();
+        private static List<string> getWmiNamespaces() {
+            List<string> namespaces = new List<string>();
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM meta_class");
+            ManagementObjectCollection col = searcher.Get();
             try {
-                foreach (ManagementObject objDisk in colDisks) {
-                    namespaces.Add(objDisk.ClassPath.ClassName);
+                foreach (ManagementObject obj in col) {
+                    namespaces.Add(obj.ClassPath.ClassName);
                 }
             }
             catch (Exception e) {
                 return null;
             }
-
-            return namespaces.ToArray();
+            return namespaces;
         }
 	}
 }

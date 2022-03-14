@@ -1,0 +1,7 @@
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\bin\Debug\WMI Displayer.exe.config
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\bin\Debug\WMI Displayer.exe
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\bin\Debug\WMI Displayer.pdb
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\obj\Debug\WMI_Displayer.MainForm.resources
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\obj\Debug\WMI Displayer.csproj.GenerateResource.Cache
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\obj\Debug\WMI Displayer.exe
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\obj\Debug\WMI Displayer.pdb

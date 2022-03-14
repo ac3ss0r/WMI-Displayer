@@ -1,0 +1,11 @@
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\bin\Release\WMI Displayer.exe.config
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\bin\Release\WMI Displayer.exe
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\obj\Release\WMI_Displayer.MainForm.resources
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\obj\Release\WMI Displayer.csproj.GenerateResource.Cache
+C:\Users\админ\Documents\Visual Studio 2010\Projects\WMI Displayer\obj\Release\WMI Displayer.exe
+C:\Users\админ\Documents\Visual Studio 2012\WMI Displayer\bin\Release\WMI Displayer.exe.config
+C:\Users\админ\Documents\Visual Studio 2012\WMI Displayer\obj\Release\WMI Displayer.exe
+C:\Users\админ\Documents\Visual Studio 2012\WMI Displayer\bin\Release\WMI Displayer.exe
+C:\Users\админ\Documents\Visual Studio 2012\WMI Displayer\obj\Release\WMI Displayer.csprojResolveAssemblyReference.cache
+C:\Users\админ\Documents\Visual Studio 2012\WMI Displayer\obj\Release\WMI_Displayer.MainForm.resources
+C:\Users\админ\Documents\Visual Studio 2012\WMI Displayer\obj\Release\WMI Displayer.csproj.GenerateResource.Cache

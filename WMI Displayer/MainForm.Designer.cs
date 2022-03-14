@@ -37,49 +37,49 @@ namespace WMI_Displayer
 		private void InitializeComponent()
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.classesListBox = new System.Windows.Forms.ComboBox();
+            this.getPropsButton = new System.Windows.Forms.Button();
+            this.classValuesField = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // classesListBox
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 24);
-            this.comboBox1.TabIndex = 0;
+            this.classesListBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.classesListBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.classesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.classesListBox.FormattingEnabled = true;
+            this.classesListBox.Location = new System.Drawing.Point(12, 8);
+            this.classesListBox.Name = "classesListBox";
+            this.classesListBox.Size = new System.Drawing.Size(262, 24);
+            this.classesListBox.TabIndex = 0;
             // 
-            // button1
+            // getPropsButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(280, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 27);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "get props";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.getPropsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.getPropsButton.Location = new System.Drawing.Point(280, 6);
+            this.getPropsButton.Name = "getPropsButton";
+            this.getPropsButton.Size = new System.Drawing.Size(97, 27);
+            this.getPropsButton.TabIndex = 1;
+            this.getPropsButton.Text = "get props";
+            this.getPropsButton.UseVisualStyleBackColor = true;
+            this.getPropsButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // richTextBox1
+            // classValuesField
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 39);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(365, 295);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.classValuesField.Location = new System.Drawing.Point(12, 39);
+            this.classValuesField.Name = "classValuesField";
+            this.classValuesField.Size = new System.Drawing.Size(365, 295);
+            this.classValuesField.TabIndex = 2;
+            this.classValuesField.Text = "";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 346);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.classValuesField);
+            this.Controls.Add(this.getPropsButton);
+            this.Controls.Add(this.classesListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -90,8 +90,8 @@ namespace WMI_Displayer
 
 		}
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox classesListBox;
+        private System.Windows.Forms.Button getPropsButton;
+        private System.Windows.Forms.RichTextBox classValuesField;
 	}
 }
