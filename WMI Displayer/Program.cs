@@ -14,6 +14,7 @@ namespace WMI_Displayer
 		[STAThread]
 		private static void Main(string[] args)
 		{
+			Control.CheckForIllegalCrossThreadCalls = false;
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
