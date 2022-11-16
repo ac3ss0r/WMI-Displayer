@@ -5,5 +5,7 @@ WMI Disaplayer is a small .NET program that I've made for getting Windows Manage
 
 ## Features
 - Loading all of existing Windows Management Instrumentation classes and viewing their keys & values
-## Left to add
-- The program is currently single-threaded and WMI loading is sometimes slow, so the GUI can freeze for a while. Need to add multi-threading.
+## TODO
+- [x] Making the program multi-theaded (async WMI calls)
+- [ ] Adding WMI method calling implementation
+- [ ] Adding WMI Spoofing
