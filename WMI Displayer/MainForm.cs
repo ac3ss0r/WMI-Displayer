@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Management;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Text;
 
 namespace WMI_Displayer
 {
@@ -11,6 +15,9 @@ namespace WMI_Displayer
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		
+		private string[] namespaces;
+		
 		public MainForm()
 		{
 			//
@@ -24,25 +31,50 @@ namespace WMI_Displayer
 		}
 
         private void button1_Click(object sender, EventArgs e) {
-            classValuesField.Text = getWmiData(classesListBox.Text);
+			SetButtonsActive(false);
+			ThreadPool.QueueUserWorkItem(result=>{
+			      classValuesField.Invoke(new Action(()=>{
+			        this.classValuesField.Text = getWmiData(classesListBox.Text);
+			        SetButtonsActive(true);
+			      }));
+			});
         }
+		
+		private void RefreshNamespaces() {
+			SetButtonsActive(false);
+			ThreadPool.QueueUserWorkItem(result=>{
+			      namespaces = getWmiNamespaces(pathListbox.Text);
+			      classesListBox.Invoke(new Action(()=>{
+			         this.classesListBox.DataSource = namespaces;
+			         SetButtonsActive(true);
+			      }));
+			});
+		}
 
         private void MainForm_Load(object sender, EventArgs e) {
-            classesListBox.DataSource = getWmiNamespaces();
+			RefreshNamespaces();
         }
-        
+		
+		void ClassesButtonClick(object sender, EventArgs e) {
+			RefreshNamespaces();
+		}
+		
+		private void SetButtonsActive(bool state) {
+			this.classesButton.Enabled = state;
+			this.getPropsButton.Enabled = state;
+		}
         
         private static string getWmiData(string cls) {
-            ManagementObjectSearcher mgmtObjSearcher = new ManagementObjectSearcher("SELECT * FROM "+cls);
-		    ManagementObjectCollection colDisks = mgmtObjSearcher.Get();
-            string info = "";
             try {
-                foreach (ManagementObject objDisk in colDisks) {
-                    foreach (PropertyData data in objDisk.Properties) {
-                        info += data.Name + ": " + data.Value + "\n";
+            	ManagementClass mngcls = new ManagementClass(cls);
+           		StringBuilder buffer = new StringBuilder();
+            	mngcls.Get();
+            	foreach (ManagementObject obj in mngcls.GetInstances()) {
+                    foreach (PropertyData data in obj.Properties) {
+		    			buffer.AppendLine(data.Name + ": " + data.Value);
                     }
                 }
-                return info;
+		    	return buffer.ToString();
             }
             catch (Exception e) {
                 return e.ToString();
@@ -50,19 +82,27 @@ namespace WMI_Displayer
             
         }
 
-        private static List<string> getWmiNamespaces() {
+		private static string[] getWmiNamespaces(string path) {
             List<string> namespaces = new List<string>();
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM meta_class");
-            ManagementObjectCollection col = searcher.Get();
             try {
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(
+            	new ManagementScope(path),
+				new WqlObjectQuery("select * from meta_class"), null);
+           	ManagementObjectCollection col = searcher.Get();
                 foreach (ManagementObject obj in col) {
                     namespaces.Add(obj.ClassPath.ClassName);
                 }
             }
-            catch (Exception e) {
-                return null;
-            }
-            return namespaces;
+            catch { }
+            return namespaces.ToArray();
         }
+		
+		void GithubLinkLinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start("https://github.com/acessors/WMI-Displayer");	
+		}
+		
+		void AboutLinkLinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start("https://en.wikipedia.org/wiki/Windows_Management_Instrumentation");
+		}
 	}
 }
