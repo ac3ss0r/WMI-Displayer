@@ -6,36 +6,32 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace WMI_Displayer
-{
-	partial class MainForm
-	{
-		/// <summary>
-		/// Designer variable used to keep track of non-visual components.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
-		
-		/// <summary>
-		/// Disposes resources used by the form.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing) {
-				if (components != null) {
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
-		}
-		
-		/// <summary>
-		/// This method is required for Windows Forms designer support.
-		/// Do not change the method contents inside the source code editor. The Forms designer might
-		/// not be able to load this method if it was changed manually.
-		/// </summary>
-		private void InitializeComponent()
-		{
+namespace WMI_Displayer {
+    partial class MainForm {
+        /// <summary>
+        /// Designer variable used to keep track of non-visual components.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Disposes resources used by the form.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
+                if (components != null) {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// This method is required for Windows Forms designer support.
+        /// Do not change the method contents inside the source code editor. The Forms designer might
+        /// not be able to load this method if it was changed manually.
+        /// </summary>
+        private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.classesListBox = new System.Windows.Forms.ComboBox();
             this.getPropsButton = new System.Windows.Forms.Button();
@@ -50,13 +46,13 @@ namespace WMI_Displayer
             // 
             // classesListBox
             // 
-            this.classesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.classesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.classesListBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.classesListBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.classesListBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.classesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.classesListBox.ForeColor = System.Drawing.Color.Black;
+            this.classesListBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.classesListBox.FormattingEnabled = true;
             this.classesListBox.Location = new System.Drawing.Point(85, 35);
             this.classesListBox.Name = "classesListBox";
@@ -78,8 +74,8 @@ namespace WMI_Displayer
             // 
             // classValuesField
             // 
-            this.classValuesField.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.classValuesField.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.classValuesField.BackColor = System.Drawing.Color.White;
             this.classValuesField.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -92,13 +88,13 @@ namespace WMI_Displayer
             // 
             // pathListbox
             // 
-            this.pathListbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pathListbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pathListbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.pathListbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.pathListbox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.pathListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pathListbox.ForeColor = System.Drawing.Color.Black;
+            this.pathListbox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.pathListbox.FormattingEnabled = true;
             this.pathListbox.Items.AddRange(new object[] {
             "",
@@ -188,13 +184,13 @@ namespace WMI_Displayer
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
-		private System.Windows.Forms.LinkLabel aboutLink;
-		private System.Windows.Forms.LinkLabel githubLink;
-		private System.Windows.Forms.Button classesButton;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox pathListbox;
+        }
+        private System.Windows.Forms.LinkLabel aboutLink;
+        private System.Windows.Forms.LinkLabel githubLink;
+        private System.Windows.Forms.Button classesButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox pathListbox;
 
         private System.Windows.Forms.ComboBox classesListBox;
         private System.Windows.Forms.Button getPropsButton;

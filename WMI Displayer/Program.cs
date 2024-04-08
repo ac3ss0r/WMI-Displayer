@@ -11,6 +11,5 @@ namespace WMI_Displayer {
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
 		}
-
 	}
 }

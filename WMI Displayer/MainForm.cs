@@ -18,7 +18,7 @@ namespace WMI_Displayer {
 			SetButtonsActive(false);
 			ThreadPool.QueueUserWorkItem(x => {
 				classValuesField.Invoke((MethodInvoker)delegate() { 
-					this.classValuesField.Text = getWmiData(classesListBox.Text);
+					classValuesField.Text = getWmiData(classesListBox.Text);
 					SetButtonsActive(true);
 				});
 			});
@@ -28,7 +28,7 @@ namespace WMI_Displayer {
 			SetButtonsActive(false);
 			ThreadPool.QueueUserWorkItem(result => {
 				classesListBox.Invoke((MethodInvoker)delegate () {
-					this.classesListBox.DataSource = getWmiNamespaces(pathListbox.Text);
+					classesListBox.DataSource = getWmiNamespaces(pathListbox.Text);
 					SetButtonsActive(true);
 				});
 			});
@@ -43,8 +43,8 @@ namespace WMI_Displayer {
 		}
 
 		private void SetButtonsActive(bool state) {
-			this.classesButton.Enabled = state;
-			this.getPropsButton.Enabled = state;
+			classesButton.Enabled = state;
+			getPropsButton.Enabled = state;
 		}
 
 		private static string getWmiData(string cls) {
